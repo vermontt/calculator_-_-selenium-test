@@ -1,6 +1,6 @@
 package parametrized;
 
-import exception.BadNumberValue;
+import calculator.exception.BadNumberValue;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;

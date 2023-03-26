@@ -1,6 +1,6 @@
 package calculator;
 
-import exception.BadNumberValue;
+import calculator.exception.BadNumberValue;
 import model.Concatenator;
 import utils.Validator;
 

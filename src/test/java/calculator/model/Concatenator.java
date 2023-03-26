@@ -1,6 +1,6 @@
 package model;
 
-import exception.BadNumberValue;
+import calculator.exception.BadNumberValue;
 
 /**
  * Класс конкатенатор хранит в себе операции вычисления

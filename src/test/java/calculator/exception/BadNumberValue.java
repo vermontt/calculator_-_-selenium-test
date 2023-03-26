@@ -1,4 +1,4 @@
-package exception;
+package calculator.exception;
 
 /**
  * Исключение в случае вееденого невалидного значения

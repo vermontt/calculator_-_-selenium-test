@@ -1,6 +1,6 @@
 package utils;
 
-import exception.BadNumberValue;
+import calculator.exception.BadNumberValue;
 
 /**
  * Класс для проверки на валидацию

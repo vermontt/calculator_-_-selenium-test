@@ -1,6 +1,6 @@
 package single;
 
-import exception.BadNumberValue;
+import calculator.exception.BadNumberValue;
 import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
