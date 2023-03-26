@@ -3,4 +3,4 @@
 - Maven
 - UnitTests
  
-as well as an example of working with the Page Object Model ui_tests_examples
+as well as an example of working with the Page Object Model
