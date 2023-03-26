@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import selenium.utils.Screen;
@@ -28,32 +29,40 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
+    //Элемент DOM дерева, отвечающий за вывод всех категорий
+    @FindBy(xpath = "//div/button[@data-marker=\"top-rubricator/all-categories\"]")
+    public WebElement allCategory;
+
+    //Элемент DOM дерева, отвечающий за категорию "Электроника"
+    @FindBy(xpath = "//div[@data-marker='top-rubricator/root-category-26195']")
+    public WebElement electronicCategory;
+
     //Элемент DOM дерева, отвечающий за вывод категории Оргтехника
-    @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div[2]/div/div[1]/div/select/option[55]")
+    @FindBy(xpath = "//div/a/strong[@data-name='Оргтехника и расходники']")
     public WebElement categoryOfficeEquipment;
 
     //Элемент DOM дерева, отвечающий за поиск объявлений по слову
-    @FindBy(xpath = "//*[@id=\"downshift-input\"]")
+    @FindBy(xpath = "//div//input[@data-marker=\"search-form/suggest\"]")
     public WebElement searchField;
 
     //Элемент DOM дерева, отвечающий за функцию: чекбокс "Только с фото"
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div/div[4]/div[1]/label[2]/span")
+    @FindBy(xpath = "//div//span[@class=\"checkbox-label-OmC9T text-text-LurtD text-size-s-BxGpL text-color-default-_QyDA\"]")
     public WebElement photoCheckbox;
 
     //Элемент DOM дерева, отвечающий за поле выбора региона поиска
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div/div[5]/div[1]/span/span/div/div")
+    @FindBy(xpath = "//div[@data-marker=\"search-form/change-location\"]")
     public WebElement selectRegion;
 
     //Элемент DOM дерева, отвечающий за строку ввода региона поиска
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div/div[6]/div/div/span/div/div[1]/div[2]/div/input")
+    @FindBy(xpath = "//div[@data-marker=\"popup-location/region\"]")
     public WebElement inputRegion;
 
     //Элемент DOM дерева, отвечающий за первый предложенный сайтом вариант региона поиска
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div/div[6]/div/div/span/div/div[1]/div[2]/div/ul/li[1]")
+    @FindBy(xpath = "//div/ul/li[@data-marker=\"suggest(0)\"]")
     public WebElement proposedRegion;
 
     //Элемент DOM дерева, отвечающий за кнопку "Показать объявления", находящуюся в поле выбора региона
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[2]/div/div[2]/div/div[6]/div/div/span/div/div[3]/div/div[2]/div/button")
+    @FindBy(xpath = "//div/button/span[@class=\"button-textBox-_SF60\"")
     public WebElement showAds;
 
     //Элемент DOM дерева, отвечающий за функцию списка сортировки по параметру "Дороже"
@@ -106,5 +115,4 @@ public class HomePage {
             System.out.println(getPriceArgument(i).getAttribute("content"));
         }
     }
-
 }

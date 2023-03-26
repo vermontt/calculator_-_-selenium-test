@@ -32,15 +32,13 @@ public class BaseTest {
         //Установка свойств вебдрайвера, пути к нему
         System.setProperty(config.driverProperty(), config.driverPath());
 
+        //Необходимый блок для устранения ошибок работы Chrome браузера 111 версии
         ChromeOptions chromeOptions = new ChromeOptions();
-
         chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
-
         driver = new ChromeDriver(chromeOptions);
 
-
         //Создание экземпляра драйвера
-    //    driver = new ChromeDriver();
+        //driver = new ChromeDriver();
 
         //Открытие стартовой страницы, с которой будут стартовать тесты
         driver.get(config.url());

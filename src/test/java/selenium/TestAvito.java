@@ -2,6 +2,7 @@ package selenium;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import selenium.BaseTest;
 import selenium.pages.HomePage;
@@ -22,8 +23,11 @@ public class TestAvito extends BaseTest {
 
         //Создание экземпляра класса страницы HomePage
         HomePage avitoPage = new HomePage(driver);
+        Actions actions = new Actions(driver);
 
         // Выбор категорию “Оргтехника и расходники”
+        avitoPage.clickOptions(avitoPage.allCategory);
+        actions.moveToElement(avitoPage.electronicCategory).perform();
         avitoPage.clickOptions(avitoPage.categoryOfficeEquipment);
 
         //В поле поиска написать “Принтер”
@@ -36,7 +40,8 @@ public class TestAvito extends BaseTest {
         avitoPage.clickOptions(avitoPage.selectRegion);
 
         //	Ввести регион “Владивосток”
-        avitoPage.inputText(avitoPage.inputRegion, "Владивосток");
+        avitoPage.clickOptions(avitoPage.inputRegion);
+        // avitoPage.inputText(avitoPage.inputRegion, "Владивосток");
         Thread.sleep(3000);
         // Выбрать первый предложенный сайтом вариант выбора региона
         avitoPage.clickOptions(avitoPage.proposedRegion);
@@ -45,7 +50,7 @@ public class TestAvito extends BaseTest {
         avitoPage.clickOptions(avitoPage.showAds);
 
         //	В выпадающем списке сортировки выбрать “Дороже”
-        avitoPage.clickOptions(avitoPage.expensively);
+        // avitoPage.clickOptions(avitoPage.expensively);
 
         //	Вывести в консоль значение цены первых 5 товаров
         avitoPage.getPriceList(5);
